@@ -17,10 +17,14 @@ import Navbar from './components/Navbar'
  */
 
 export default function App() {
+  const navCallback = (index: number) => {
+    alert(`Navbar item ${index} clicked`)
+  }
+
   return (
     <>
       <Dashboard />
-      <Navbar />
+      <Navbar callback={navCallback}/>
     </>
   )
 }
