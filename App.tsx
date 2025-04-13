@@ -6,9 +6,14 @@
 
 import { Text } from 'react-native'
 
-import { Dashboard } from './components/screens/Dashboard'
+import Dashboard from './components/screens/Dashboard'
 
-//TODO: layout
+/**
+ * TODO board (Key: - incomplete, o complete, x wontfix, !- high priority)
+ * - Header
+ * - Navigation  
+ */
+
 export default function App() {
   return (
     <>
