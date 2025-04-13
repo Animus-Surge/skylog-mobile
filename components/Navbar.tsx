@@ -15,18 +15,18 @@ export default function Navbar({callback}): {callback?: any} {
 
   return (
     <View style={styles.navbar}>
-      <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }} onPress={() => callback ? callback(0) : router.replace('/')}>
+      <TouchableOpacity style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }} onPress={() => callback ? callback(0) : router.replace('/')}>
         <FontAwesome name="home" size={24} color="black"/>
         <Text style={{ fontSize: 14, color: 'black' }}>Home</Text>
-      </View>
-      <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }} onPress={() => callback ? callback(1) : router.replace('/map')}>
+      </TouchableOpacity>
+      <TouchableOpacity style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }} onPress={() => callback ? callback(1) : router.replace('/map')}>
         <FontAwesome name="map" size={24} color="#333"/>
         <Text style={{ fontSize: 14, color: '#333' }}>Map</Text>
-      </View>
-      <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }} onPress={() => callback ? callback(2) : router.replace('/logbook')}>
+      </TouchableOpacity>
+      <TouchableOpacity style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }} onPress={() => callback ? callback(2) : router.replace('/logbook')}>
         <FontAwesome name="pencil" size={24} color="#333"/>
         <Text style={{ fontSize: 14, color: '#333' }}>Logbook</Text>
-      </View>
+      </TouchableOpacity>
       <TouchableOpacity style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }} onPress={() => callback ? callback(3) : router.replace('/profile')}>
         <FontAwesome name="user" size={24} color="#333" />
         <Text style={{ fontSize: 14, color: '#333' }}>Profile</Text>
