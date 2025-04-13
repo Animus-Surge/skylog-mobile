@@ -6,7 +6,7 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
-export default function Header({title})): {title?: string} {
+export default function Header({title}): {title?: string} {
   return (
     <View style={styles.header}>
       <Text style={styles.headerText}>{title}</Text>
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     paddingTop: 50,
-    paddingBottom: 20.
+    paddingBottom: 20,
     paddingHorizontal: 10,
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
