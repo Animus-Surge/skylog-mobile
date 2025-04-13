@@ -8,12 +8,13 @@ import { Text } from 'react-native'
 
 import Dashboard from './components/screens/Dashboard'
 import Navbar from './components/Navbar'
-
+import Header from './components/snackSpecific/header'
 
 /**
  * TODO board (Key: - incomplete, o complete, x wontfix, !- high priority)
- * - Header
- * - Navigation  
+ * o Header
+ *!- Integrate navbar with header, titles and all 
+ * o Navigation  
  */
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
 
   return (
     <>
+      <Header title="Dashboard"/>
       <Dashboard />
       <Navbar callback={navCallback}/>
     </>
