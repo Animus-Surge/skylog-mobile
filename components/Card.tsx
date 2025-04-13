@@ -17,7 +17,7 @@ import { FontAwesome } from '@expo/vector-icons'
  * @param {object} style - Additional styles
  */
 
-export default function Card({ title, style, content }: { title?: string; style?: object; content: React.ReactNode }) {
+export default function Card({ title, style, bodyStyle, children }: { title?: string; style?: object; bodyStyle?: object; children: React.ReactNode }) {
   return (
     <View style={[styles.card, style]}>
       {title && (
@@ -25,8 +25,8 @@ export default function Card({ title, style, content }: { title?: string; style?
           <Text style={styles.cardTitle}>{title}</Text>
         </View>
       )}
-      <View style={{ marginTop: 10 }}>
-        {content}
+      <View style={[{ marginVertical: 10 }, bodyStyle]}>
+        {children}
       </View>
     </View>
   )
@@ -38,14 +38,11 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 15,
     marginVertical: 10,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    marginHorizontal: 5,
     elevation: 5,
+    width: 280,
+    borderWidth: 1,
+    borderColor: '#ccc',
   },
   cardTitle: {
     fontSize: 18,

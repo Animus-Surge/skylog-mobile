@@ -6,32 +6,85 @@
 
 import React, { useEffect, useState } from 'react'
 import { View, Text, StyleSheet, ScrollView } from 'react-native'
+import { FontAwesome } from '@expo/vector-icons'
 
 import Accordion from '../Accordion'
 import Button from '../Button'
+import ButtonGroup from '../ButtonGroup'
 import Card from '../Card'
 
 export default function Dashboard() {
   return (
     <View style={styles.container}>
-      <ScrollView vertical style={{ width: '100%' }}>
+      <ScrollView vertical style={{ width: '100%', padding: 20 }}>
+        <Text style={styles.text}>Welcome, Surge!</Text>
         <ScrollView horizontal style={styles.horizontalScroll}>
-          <Card title="Card 1">
-            <Text>Content of Card 1</Text>
+          <Card bodyStyle={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <FontAwesome name="clock-o" size={64} color="black" />
+            <Text style={styles.text}>10</Text>
+            <Text style={{ fontSize: 20 }}>Hours Logged</Text>
+            <Button text="View Details" style={{ marginTop: 15 }} onPress={() => alert('View Details clicked!')} />
           </Card>
-          <Card title="Card 2">
-            <Text>Content of Card 2</Text>
+          <Card bodyStyle={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <FontAwesome name="plane" size={64} color="black" />
+            <Text style={styles.text}>5</Text>
+            <Text style={{ fontSize: 20 }}>Flights this week</Text>
+            <Button text="View Details" style={{ marginTop: 15 }} onPress={() => alert('View Details clicked!')} />
           </Card>
-
         </ScrollView>
-        <Text style={styles.text}>Some text here, don't mind me</Text>
-        <Accordion title="Accordion 1">
-          <Text>Content of Accordion 1</Text>
+        <Accordion title="Create New...">
+          <ButtonGroup
+            buttons={[
+              { text: 'New Entry', onPress: () => alert('Button 1 clicked!') },
+              { text: 'New Flight', onPress: () => alert('Button 2 clicked!') },
+            ]}
+              />
+          <ButtonGroup
+            buttons={[
+              { text: 'New Aircraft', onPress: () => alert('Button 3 clicked!') },
+              { text: 'New Checklist', onPress: () => alert('Button 4 clicked!') },
+            ]}
+              />
         </Accordion>
-        <Accordion title="Accordion 2">
-          <Text>Content of Accordion 2</Text>
+        <Accordion title="Checklists">
+          <Text style={{ fontSize: 18, fontWeight: 'bold' }}>N67890 (Piper Cherokee)</Text>
+          <ButtonGroup buttons={[
+            { text: 'Preflight', onPress: () => alert('Button 1 clicked!') },
+            { text: 'Postflight', onPress: () => alert('Button 2 clicked!') }
+          ]} />
+
+          <Text style={{ fontSize: 18, fontWeight: 'bold' }}>N12345 (Cessna 172)</Text>
+          <ButtonGroup buttons={[
+            { text: 'Preflight', onPress: () => alert('Button 1 clicked!') },
+            { text: 'Postflight', onPress: () => alert('Button 2 clicked!') }
+          ]} />
         </Accordion>
-        <Button title="Click Me" onPress={() => alert('Button clicked!')} />
+        <Accordion title="Recent Airports">
+          <Text style={{ fontSize: 18, fontWeight: 'bold' }}>KATL (Hartsfield-Jackson Atlanta International Airport)</Text>
+          <ButtonGroup buttons={[
+            { text: 'View Details', onPress: () => alert('Button 1 clicked!') },
+            { text: 'Add to Favorites', onPress: () => alert('Button 2 clicked!') }
+          ]} />
+
+          <Text style={{ fontSize: 18, fontWeight: 'bold' }}>KJFK (John F. Kennedy International Airport)</Text>
+          <ButtonGroup buttons={[
+            { text: 'View Details', onPress: () => alert('Button 1 clicked!') },
+            { text: 'Add to Favorites', onPress: () => alert('Button 2 clicked!') }
+          ]} />
+        </Accordion>
+        <Accordion title="Your Aircraft">
+          <Text style={{ fontSize: 18, fontWeight: 'bold' }}>N12345 (Cessna 172)</Text>
+          <ButtonGroup buttons={[
+            { text: 'View Details', onPress: () => alert('Button 1 clicked!') },
+            { text: 'Add to Favorites', onPress: () => alert('Button 2 clicked!') }
+          ]} />
+
+          <Text style={{ fontSize: 18, fontWeight: 'bold' }}>N67890 (Piper Cherokee)</Text>
+          <ButtonGroup buttons={[
+            { text: 'View Details', onPress: () => alert('Button 1 clicked!') },
+            { text: 'Add to Favorites', onPress: () => alert('Button 2 clicked!') }
+          ]} />
+        </Accordion>
       </ScrollView>
     </View>
   )
@@ -42,26 +95,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     backgroundColor: '#f5f5f5',
-    padding: 20,
   },
+  
   horizontalScroll: {
     flexDirection: 'row',
     padding: 10
-  },
-  card: {
-    backgroundColor: '#fff',
-    borderRadius: 10,
-    padding: 20,
-    margin: 10,
-    width: 300,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
   },
   text: {
     fontSize: 24,

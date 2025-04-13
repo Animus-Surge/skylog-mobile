@@ -6,6 +6,7 @@
 import React, { useState } from 'react'
 
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { FontAwesome } from '@expo/vector-icons'
 
 /**
  * Accordion component
@@ -23,6 +24,7 @@ export default function Accordion({ title, children }: { title: string; children
     <View style={styles.accordionContainer}>
       <TouchableOpacity onPress={toggleAccordion} style={styles.accordionHeader}>
         <Text style={styles.accordionTitle}>{title}</Text>
+        <FontAwesome name={isOpen ? 'chevron-up' : 'chevron-down'} size={14} color="grey" />
       </TouchableOpacity>
       {isOpen && <View style={styles.accordionContent}>{children}</View>}
     </View>
@@ -43,10 +45,14 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
+    borderWidth: 1,
+    borderColor: '#ccc',
   },
   accordionHeader: {
     padding: 15,
     backgroundColor: '#fff',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   accordionTitle: {
     fontSize: 18,

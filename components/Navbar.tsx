@@ -13,11 +13,26 @@ import { FontAwesome } from '@expo/vector-icons'
 export default function Navbar() {
   const router = useRouter()
 
+  //TODO: active page state
+
   return (
     <View style={styles.navbar}>
-      <FontAwesome name="home" size={24} color="black" onPress={() => router.push('/')} />
-      <FontAwesome name="user" size={24} color="black" onPress={() => router.push('/')} />
-      <FontAwesome name="cog" size={24} color="black" onPress={() => router.push('/')} />
+      <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <FontAwesome name="home" size={24} color="black" onPress={() => router.replace('/')} />
+        <Text style={{ fontSize: 14, color: 'black' }}>Home</Text>
+      </View>
+      <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <FontAwesome name="map" size={24} color="#333" onPress={() => router.replace('/map')} />
+        <Text style={{ fontSize: 14, color: '#333' }}>Map</Text>
+      </View>
+      <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <FontAwesome name="pencil" size={24} color="#333" onPress={() => router.replace('/logbook')} />
+        <Text style={{ fontSize: 14, color: '#333' }}>Logbook</Text>
+      </View>
+      <View style={{ flex: 1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <FontAwesome name="user" size={24} color="#333" onPress={() => router.replace('/profile')} />
+        <Text style={{ fontSize: 14, color: '#333' }}>Profile</Text>
+      </View>
     </View>
   )
 }
@@ -27,10 +42,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#ffaa00',
     paddingVertical: 10,
     borderTopWidth: 1,
     borderTopColor: '#ccc',
-    paddingBottom: 30,
+    paddingBottom: 40,
   },
 })

@@ -26,12 +26,15 @@ export default function Button({ text, onPress, icon, style }: { text: string; o
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#007BFF',
+    backgroundColor: '#222',
+    color: '#fff',
     borderRadius: 5,
     padding: 10,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: '#ccc',
   },
   buttonText: {
     color: '#fff',
