@@ -4,13 +4,16 @@
  */
 
 import { StyleSheet, Text, View } from 'react-native'
+import { TextInput } from 'react-native'
 
-import MapViewComponent from '../MapView'
+import MapView from 'react-native-maps'
+
+import Button from '../Button'
 
 export default function Map() {
   return (
     <View style={styles.container}>
-      <MapViewComponent />
+      <MapView style={styles.map} />
     </View>
   )
 }
@@ -20,6 +23,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  map: {
+    width: '100%',
+    height: '100%',
   },
 });
 
