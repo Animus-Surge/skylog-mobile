@@ -12,10 +12,7 @@
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+      "package":"space.animus_surge.skylog_mobile"
     },
     "web": {
       "bundler": "metro",

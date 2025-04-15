@@ -15,11 +15,11 @@ import { FontAwesome } from '@expo/vector-icons'
  * @param {string} icon - Icon name (FontAwesome)
  * @param {object} style - Additional styles
  */
-export default function Button({ text, onPress, icon, style }: { text: string; onPress: () => void; icon?: string; style?: object }) {
+export default function Button({ text, onPress, icon, style }: { text?: string; onPress: () => void; icon?: string; style?: object }) {
   return (
     <TouchableOpacity onPress={onPress} style={[styles.button, style]}>
       {icon && <FontAwesome name={icon} size={24} color="white" />}
-      <Text style={styles.buttonText}>{text}</Text>
+      {text && <Text style={styles.buttonText}>{text}</Text>}
     </TouchableOpacity>
   )
 }
