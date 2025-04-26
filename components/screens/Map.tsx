@@ -13,7 +13,6 @@ import Button from '../Button'
 export default function Map() {
   return (
     <View style={styles.container}>
-      <MapView style={styles.map} />
     </View>
   )
 }

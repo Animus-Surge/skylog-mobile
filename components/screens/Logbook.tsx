@@ -5,13 +5,11 @@
 
 import { StyleSheet, Text, View } from 'react-native'
 
-import Form from '../Form'
-import FormInput from '../FormInput'
+
 
 export default function Logbook() {
   return (
     <View style={styles.container}>
-      
     </View>
   )
 }
