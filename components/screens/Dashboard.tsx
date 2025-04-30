@@ -17,11 +17,11 @@ export default function Dashboard() {
   return (
     <View style={styles.container}>
       <ScrollView vertical style={{ width: '100%', padding: 20 }}>
-        <Text style={styles.text}>Welcome, Surge!</Text>
+        <Text style={styles.text}>Welcome, User!</Text>
         <ScrollView horizontal style={styles.horizontalScroll}>
           <Card bodyStyle={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <FontAwesome name="clock-o" size={64} color="black" />
-            <Text style={styles.text}>10</Text>
+            <Text style={styles.text}>150</Text>
             <Text style={{ fontSize: 20 }}>Hours Logged</Text>
             <Button text="View Details" style={{ marginTop: 15 }} onPress={() => alert('View Details clicked!')} />
           </Card>
